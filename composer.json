@@ -1,0 +1,16 @@
+{
+    "name": "dgbiv/kcadmin",
+    "description": "A faster admin framework.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "blobt",
+            "email": "380255922@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	"php": ">=7.0.0"
+    }
+}
