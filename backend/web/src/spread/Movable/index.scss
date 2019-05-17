@@ -1,0 +1,15 @@
+.movable-object {
+  position: absolute;
+  border: 2px solid transparent;
+  &.active {
+    border-color: #35c7ff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+  }
+  .resize-handler {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: se-resize;
+    user-select: none;
+  }
+}

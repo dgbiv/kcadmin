@@ -1,0 +1,30 @@
+$color-primary: #2f4887;
+$color-primary-vivid: hsl(hue($color-primary), saturation($color-primary), 50%);
+$color-primary-dim: lighten($color-primary-vivid, 35%);
+$color-primary-pale: lighten($color-primary-vivid, 42%);
+$color-background: rgb(248, 250, 255);
+$color-panel: #fff;
+$color-pale: #f6f6f6;
+$color-fore: #666;
+$color-dim: #b4b6c5;
+$color-thin: #515156;
+$color-sidebar: #080e39;
+$color-sidebar-active: #2a2e52;
+$color-sidebar-fore: #dce0f2;
+$color-sidebar-active-fore: #26caff;
+$color-sidebar-logo: #26caff;
+
+$color-success: #2ab57d;
+$color-danger: #c60013;
+$color-info: #2a92ec;
+
+$lightenDegree: 70%;
+$sidebar-width: 190px;
+
+%shadow {
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1)!important;
+}
+
+%shadow-soft {
+  box-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5) !important;
+}

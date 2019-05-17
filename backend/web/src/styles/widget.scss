@@ -1,0 +1,302 @@
+.content-wrapper {
+   margin-left: 30px;
+   margin-right: 30px;
+   > section.content {
+     margin: 30px 0;
+     background: $color-panel!important;
+     box-shadow: 0 4px 30px 2px rgba(223, 225, 230, 0.5)!important;
+     border-radius: 10px;
+   }
+ }
+
+.error-page .fa-warning {
+  font-size: 1.5em;
+}
+
+#treeView {
+  background: none;
+}
+
+.box, .panel {
+  padding: 0!important;
+  margin: 0!important;
+  border: none!important;
+  border-image-width: 0!important;
+  box-shadow: none!important;
+  //box-shadow: 0 4px 30px 2px rgba(223, 225, 230, 0.5)!important;
+  overflow: hidden;
+  .panel {
+    box-shadow: none!important;
+  }
+}
+
+.grid-view {
+  margin-top: 20px;
+}
+
+.box.box-default {
+  margin: 0;
+}
+
+.order-index {
+  .panel-default {
+    padding: 0;
+    padding-top: 20px;
+    margin: 0;
+  }
+}
+
+.panel {
+  margin: 20px 0;
+  .panel-heading {
+    padding: 0;
+  }
+}
+
+.btn {
+  border: none;
+  $btn-list: (name: default, color: $color-pale),
+  (name: primary, color: $color-primary),
+  (name: success, color: $color-success),
+  (name: info, color: $color-info),
+  (name: danger, color: $color-danger);
+
+  @each $btn in $btn-list {
+    &.btn-#{map_get($btn, name)} {
+      $color: map_get($btn, color);
+      background: $color;
+      @if (lightness($color) < 70%) {
+        color: lighten($color, $lightenDegree)!important;
+      } @else {
+        color: darken($color, $lightenDegree)!important;
+      }
+      &:hover {
+        background: darken(map_get($btn, color), 5%);
+      }
+      &:active {
+        background: darken(map_get($btn, color), 10%);
+      }
+    }
+  }
+}
+
+.dropdown-toggle {
+  box-shadow: none!important;
+}
+.select-data-box {
+  position: static!important;
+}
+
+.panel-heading, .panel-footer {
+  background: $color-panel!important;
+}
+
+.panel-heading {
+  border: none;
+}
+
+.nav-tabs {
+  display: flex;
+  border-bottom-color: $color-pale;
+  li {
+    float: none;
+    border-bottom: 3px solid transparent;
+    a {
+      color: $color-fore;
+    }
+    a, a:hover {
+      border: none!important;
+    }
+    i {
+      color: $color-primary-vivid!important;
+    }
+    &.active {
+      border-bottom-color: $color-primary;
+      box-shadow: none;
+      a {
+        margin-right: 0;
+        color: $color-primary;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.kv-panel-before, .kv-panel-after, .panel-footer {
+  border: none;
+}
+
+table.kv-grid-table {
+  &, thead, th, td {
+    border: none!important;
+  }
+  thead {
+    background: lighten($color-primary-pale, 5%);
+    a {
+      color: $color-primary;
+    }
+    input.form-control[type][name], select {
+      background: lighten($color-primary-pale, 10%)!important;
+    }
+  }
+  >tbody {
+    >tr:nth-of-type(2n) {
+      background: lighten($color-primary-pale, 6%);
+      &:hover {
+        background: lighten($color-primary-pale, 6%)!important;
+      }
+    }
+    >tr:hover {
+      background: $color-panel!important;
+    }
+  }
+  td {
+    vertical-align: middle!important;
+  }
+}
+
+input:not([type="submit"]):not([type="button"]):not([type="reset"]), select {
+  width: 100%;
+  padding: 6px 12px;
+  background: lighten($color-primary-pale, 3%) !important;
+  //background: $color-pale!important;
+  //border: 1.5px solid lighten($color-primary-dim, 10%)!important;
+  border: none!important;
+  border-radius: 5px!important;
+  color: darken($color-primary, 10%);
+  box-shadow: none!important;
+}
+
+input.file-caption-name {
+  background: none!important;
+}
+
+.input-group-addon {
+  background: lighten($color-primary-pale, 5%)!important;
+  border: none!important;
+  &:hover {
+    background: $color-primary-pale!important;
+  }
+}
+
+.select2-selection.select2-selection--multiple,
+.select2-dropdown.select2-dropdown--below {
+  border: none!important;
+}
+
+::-webkit-input-placeholder {
+  color: lighten($color-primary, 50%)!important;
+  //color: $color-dim!important;
+}
+
+// 复选框
+.cbx-active {
+  border: 2px solid $color-primary-dim!important;
+  box-shadow: none!important;
+  border-radius: 0;
+  .cbx-icon {
+    background: lighten($color-primary-pale, 5%);
+    i {
+      color: $color-primary-vivid!important;
+    }
+  }
+}
+
+// Switch
+label.btn.btn-default {
+  box-shadow: none!important;
+  &.active {
+    background: darken($color-primary-vivid, 10%);
+    color: $color-primary-pale;
+  }
+}
+
+.props-main-box, .props-detail-box {
+  position: static!important;
+  width: 100%!important;
+}
+
+.tab-content {
+  min-height: 350px;
+}
+
+.goods-index {
+  td:last-child {
+    display: flex;
+    min-width: 90px;
+    height: 90px;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .btn {
+      padding: 10px;
+      border-radius: 0;
+    }
+  }
+}
+
+ul.pagination {
+  li {
+    a, span {
+      border: none!important;
+      margin: 0 5px;
+      border-radius: 100%!important;
+    }
+    &.active {
+      a {
+        background: $color-primary-vivid;
+        //box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2)!important;
+        &:hover {
+          background: darken($color-primary-vivid, 10%);
+        }
+      }
+    }
+  }
+}
+
+.after-sale-index .panel, .panel-default {
+  position: relative;
+  min-height: 75vh;
+}
+
+$width: 95px;
+
+.rc-switch {
+  width: $width!important;
+  margin-bottom: 10px;
+  &[aria-checked="false"] {
+    background: $color-info;
+  }
+  &[aria-checked="true"] {
+    background: $color-success;
+  }
+}
+
+.rc-switch-checked:after {
+  left: $width - 22px!important;
+}
+
+.empty {
+  position: absolute;
+  display: block;
+  width: 100%;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2em;
+}
+
+.kv-page-summary-container td {
+  padding: 0!important;
+}
+
+table.table.table-striped.table-bordered.detail-view {
+  &, tbody, tr, th, td {
+    border: none!important;
+  }
+  th {
+    padding-right: 50px;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,123 @@
+
+//顶栏背景色
+.logo, .navbar-static-top {
+  background: none!important;
+}
+
+.main-header {
+  position: fixed;
+  width: auto;
+  left: $sidebar-width;
+  right: 0;
+  display: flex;
+  //background-image: linear-gradient(45deg, $color-primary, adjust_hue($color-primary, 40));
+  background: $color-panel;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1)!important;
+  transition: all .3s ease-in-out;
+  z-index: 100 !important;
+  .logo-lg, .logo, .sidebar-toggle, .hidden-xs, .notifications-menu a.dropdown-toggle {
+    color: $color-thin !important;
+  }
+  .user-image {
+    background: lighten($color-primary, $lightenDegree);
+  }
+  .logo {
+    flex-grow: 1;
+    font-weight: bold;
+  }
+  .navbar-static-top {
+    margin-left: 0;
+  }
+}
+
+.user-header {
+  background: $color-primary!important;
+}
+
+.user-menu {
+  .dropdown-menu {
+    left: unset;
+    right: 0;
+    box-shadow: 0 4px 60px 10px rgba(0, 0, 0, 0.1)!important;
+    overflow: visible;
+  }
+}
+
+.sidebar-toggle {
+  &:active, &:hover {
+    background: $color-pale!important;
+  }
+}
+.notifications-menu {
+  .label-warning {
+    display: block;
+    padding: 3px 5px!important;
+    font-size: .8em!important;
+    background: #ff4e3d !important;
+    border-radius: 100%;
+  }
+  .dropdown-menu {
+    width: auto!important;
+    box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.1)!important;
+    ul.menu {
+      max-height: 40vh!important;
+      li {
+        a {
+          display: flex!important;
+          align-items: center;
+          padding: 10px 20px!important;
+          span.number {
+            color: $color-danger;
+            margin: 0 10px;
+            font-weight: bold;
+          }
+          span.tip {
+            color: $color-danger;
+            margin-left: 10px;
+            font-weight: bold;
+          }
+        }
+        i {
+          width: auto!important;
+          font-size: 1.6em;
+          margin-right: 20px;
+          padding: 10px;
+          border-radius: 100%;
+          text-align: center;
+          &.blue {
+            $color: #5964ab;
+            background: $color;
+            color: lighten($color, 50%)!important;
+          }
+          &.yellow {
+            $color: #df8346;
+            background: $color;
+            color: lighten($color, 50%)!important;
+          }
+          &.red {
+            background: $color-danger;
+            color: lighten($color-danger, 50%)!important;
+          }
+        }
+      }
+    }
+  }
+}
+
+body.sidebar-collapse {
+  .main-header {
+    left: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-header {
+    left: 0!important;
+  }
+  .logo {
+    padding: 0!important;
+  }
+  .main-header .logo, .main-header .navbar {
+    width: auto;
+  }
+}

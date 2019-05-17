@@ -1,0 +1,90 @@
+.content-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  h1, .breadcrumb {
+    margin: 5px 0!important;
+  }
+  h1 {
+    color: $color-primary;
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 5px solid $color-primary;
+  }
+}
+
+.content-header>.breadcrumb {
+  $height: 25px;
+  $size: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  position: static;
+  float: none!important;
+  height: $height;
+  background: none;
+  overflow: hidden;
+  padding: 0;
+  li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: $size + 3px;
+    background: $color-primary;
+    &:hover {
+      $background: darken($color-primary, 10%);
+      background: $background;
+      &::before {
+        border-top: $height / 2 solid $background;
+        border-bottom: $height / 2 solid $background;
+      }
+      &::after {
+        border-left: $size solid $background;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -1 * $size;
+      width: 0;
+      height: 0;
+      border-top: $height / 2 solid $color-primary;
+      border-bottom: $height / 2 solid $color-primary;
+      border-left: $size solid transparent;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -1 * $size;
+      width: 0;
+      height: 0;
+      border-top: $height / 2 solid transparent;
+      border-bottom: $height / 2 solid transparent;
+      border-left: $size solid $color-primary;
+    }
+    &.active {
+      $background: $color-primary-dim;
+      box-shadow: none;
+      background: $background;
+      color: $color-primary;
+      padding: 0 $size / 2 + 5px;
+      &::before {
+        border-top: $height / 2 solid $background;
+        border-bottom: $height / 2 solid $background;
+      }
+      &::after {
+        border-left: $size solid $background;
+      }
+    }
+    a {
+      padding: 5px 10px;
+      color: $color-primary-dim!important;
+    }
+  }
+  >li+li::before {
+    content: '';
+  }
+}
