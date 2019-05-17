@@ -13,10 +13,12 @@
       "email": "380255922@qq.com"
     },
     {
-      "name": "iron"
+      "name": "iron",
+      "email": "weiriron@outlook.com"
     },
     {
-      "name": "vimcaw"
+      "name": "vimcaw",
+      "email": "vimcaw@gmail.com"
     }
   ],
   "minimum-stability": "dev",
